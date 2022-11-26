@@ -1,0 +1,28 @@
+
+.login
+	h1
+	.user-login
+		.field
+			b
+			input[type=email]
+		.field
+			b
+			input[type=password]
+		.status
+			label > input[type=checkbox]
+			a
+		.event-email
+			span
+			.event-email-agree
+				(label > input[type=radio], em) * 2
+		button.btn-login	
+	.sns-login
+		.btn-sns-login
+			span
+			.sns-login-btns
+				(a > font-icon) * 4
+		.signup-info
+			span
+			a
+			
+			
