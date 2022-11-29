@@ -27,6 +27,112 @@ body {
 	font-family: var(--logo-en);
 }
 
+/* Button CSS */
+.btn-primary {
+	width: 100%;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	color: #fff;
+}
+
+/* GNB CSS */
+.gnb {
+	/* 작업완료후 100%로 수정 */
+	width: 375px;
+	height: 65px;
+	display: flex;
+	justify-content: space-between;
+	/* 작업완료 후, fixed로 수정 */
+	/* position: absolute;
+	bottom: 0; */
+	border-top: 1px solid var(--gloudy);
+}
+
+.gnb a {
+	flex: 1;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.gnb a .bi {
+	font-size: 22px;
+}
+
+.gnb a:nth-child(1) .bi,
+.gnb a:nth-child(4) .bi {
+	font-size: 26px;
+}
+
+.gnb a span {
+	display: block;
+	font-size: 13px;
+}
+
+/* Main Header CSS */
+.main-header {
+	height: 80px;
+	background-color: var(--crimson);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn-historyback {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	font-size: 22px;
+	flex: 1;
+}
+
+.main-header .logo {
+	color: #fff;
+	font-size: 26px;
+	margin: 0;
+	flex: 6;
+	text-align: center;
+}
+
+.user-alarm {
+	flex: 1;
+	color: #fff;
+	font-size: 22px;
+}
+
+.user-alarm span {
+	position: relative;
+}
+
+.user-alarm span em {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background-color: var(--royalblue);
+	border-radius: 50%;
+	top: 0;
+	right: -4px;
+}
+
+.user-alarm span em:before {
+	content: attr(data-count);
+	font-style: normal;
+	font-size: 10px;
+	font-family: var(--primary-en);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Content Padding */
+[class*=content] {
+	padding: 20px;
+}
+
 /* #### Preloading html #### */
 .preloading {
 	/* 작업 완료후 height : 100vh */
@@ -62,3 +168,192 @@ body {
 }
 
 /* #### Signin html #### */
+.signin {
+	height: 750px;
+}
+
+.signin-photo {
+	height: 250px;
+	background: url(/images/signin-header.jpg) no-repeat center;
+	background-size: cover;
+}
+
+.signin-header {
+	text-align: center;
+}
+
+.signin-header .logo {
+	font-size: 26px;
+	margin-bottom: 0;
+}
+
+.signin-header p {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.input-field input {
+	border: 1px solid var(--gainsboro);
+	padding: 10px 20px;
+	width: 100%;
+	border-radius: 30px;
+	margin: 5px 0;
+	transition: 0.35s;
+}
+
+.input-field input:focus {
+	border-color: var(--yellowgreen);
+}
+
+.input-field input::placeholder {
+	color: var(--silver-gray);
+	transition: 0.35s;
+}
+
+.input-field input:focus::placeholder {
+	opacity: 0;
+}
+
+.status {
+	margin: 15px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.custom-chk label input[type=checkbox] {
+	display: none;
+}
+
+.custom-chk label input[type=checkbox]+em {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	transform: translateY(5px);
+	font-style: normal;
+}
+
+.custom-chk label input[type=checkbox]+em:before {
+	content: '\F26B';
+	font-family: bootstrap-icons;
+	color: var(--light-gray);
+	display: inline-block;
+	transform: translateY(-3px);
+}
+
+.custom-chk label input[type=checkbox]:checked+em:before {
+	color: var(--crimson);
+}
+
+.btn-signin {
+	background-color: var(--yellowgreen);
+}
+
+.join-member {
+	text-align: center;
+	margin: 15px 0;
+}
+
+.join-member a {
+	text-decoration: underline;
+	margin-left: 8px;
+}
+
+.easy-signin {
+	text-align: center;
+}
+
+.easy-signin span {
+	color: var(--light-gray);
+}
+
+.social-btn {
+	margin: 10px 0;
+}
+
+.social-btn a {
+	margin: 4px;
+}
+
+/* #### Signup html #### */
+.signup {}
+
+.signup-inner {}
+
+.signup-field {
+	margin-bottom: 15px;
+}
+
+.signup-field span {
+	display: block;
+	font-weight: 400;
+}
+
+.signup-field span em {
+	color: var(--crimson);
+}
+
+.signup-field.id-pw input {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid var(--gainsboro);
+	padding: 8px 0;
+}
+
+.signup-field input::placeholder {
+	color: var(--silver-gray);
+}
+
+.signup-field.birth div {
+	display: flex;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.signup-field.birth div>*,
+.signup-field.phone div>* {
+	width: 33.3333%;
+	border: 1px solid var(--gainsboro);
+	border-radius: 3px;
+	padding: 7px;
+	text-align: center;
+}
+
+.signup-field.phone div {
+	display: flex;
+	gap: 10px;
+	margin-top: 8px;
+}
+
+.signup-field.phone div input {
+	flex: 7;
+}
+
+.btn-getcode {
+	flex: 4;
+	background-color: #fff;
+}
+
+.agree-term {
+	margin-bottom: 15px;
+}
+
+.agree-term label {
+	display: block;
+	font-size: 13px;
+}
+
+.btn-signup {
+	background-color: var(--crimson);
+}
+
+.signup-field.id-pw input:focus,
+.signup-field.birth div>*:focus,
+.signup-field.phone div input:focus {
+	border-color: var(--yellowgreen);
+}
+
+.signup-field.id-pw input:focus::placeholder,
+.signup-field.birth div>*:focus::placeholder,
+.signup-field.phone div input:focus::placeholder {
+	opacity: 0;
+}
