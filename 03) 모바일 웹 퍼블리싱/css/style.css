@@ -37,6 +37,23 @@ body {
 	color: #fff;
 }
 
+/* Clear Buttons CSS */
+.btn-all-clear {
+	border: none;
+	font-size: 11px;
+	background-color: var(--gainsboro);
+	color: #fff;
+	border-radius: 20px;
+	padding: 2px 8px;
+}
+
+.btn-clear {
+	border: none;
+	background-color: transparent;
+	font-size: 22px;
+	color: var(--silver-gray);
+}
+
 /* GNB CSS */
 .gnb {
 	/* 작업완료후 100%로 수정 */
@@ -103,11 +120,13 @@ body {
 	font-size: 22px;
 }
 
-.user-alarm span {
+.user-alarm span,
+.cart-alarm b {
 	position: relative;
 }
 
-.user-alarm span em {
+.user-alarm span em,
+.cart-alarm b em {
 	position: absolute;
 	width: 15px;
 	height: 15px;
@@ -117,7 +136,14 @@ body {
 	right: -4px;
 }
 
-.user-alarm span em:before {
+.cart-alarm b em {
+	top: -2px;
+	right: 19px;
+	color: #fff;
+}
+
+.user-alarm span em:before,
+.cart-alarm b em:before {
 	content: attr(data-count);
 	font-style: normal;
 	font-size: 10px;
@@ -404,4 +430,84 @@ body {
 .category-accordion .detail a {
 	display: block;
 	padding: 3px 0;
+}
+
+/* #### Search html #### */
+
+.search-field input {
+	border: none;
+	padding: 8px;
+	width: 100%;
+	border-radius: 30px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	background: var(--snow) url(/images/icon-search.svg) no-repeat center left 15px;
+	padding-left: 40px;
+}
+
+.search-field input::placeholder {
+	transition: 0.35s;
+}
+
+.search-field input:focus::placeholder {
+	opacity: 0;
+}
+
+.search-recent {
+	margin: 25px 0;
+}
+
+.search-recent .title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.search-recent .title h3 {
+	margin: 0;
+	color: var(--crimson);
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.search-content .items {
+	margin: 15px 0;
+}
+
+.search-content .items .item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid var(--gloudy);
+	padding: 6px 0;
+}
+
+.search-content .items .item span {
+	font-size: 15px;
+}
+
+.search-increase .title h3 {
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+.search-increase .title p {
+	margin: 0;
+	color: var(--silver-gray);
+}
+
+.search-increase-list {
+	list-style: none;
+	padding-left: 0;
+	counter-reset: rank 0;
+	line-height: 2em;
+	font-size: 15px;
+}
+
+.search-increase-list li:before {
+	counter-increment: rank;
+	content: counter(rank);
+	margin-right: 10px;
+	font-weight: 500;
+
 }
