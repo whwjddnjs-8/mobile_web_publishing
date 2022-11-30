@@ -400,7 +400,8 @@ body {
 	padding: 0 20px;
 }
 
-.category-accordion .title:after {
+.category-accordion .title:after,
+.user-shortcut a:after {
 	content: '\F282';
 	font-family: bootstrap-icons;
 	position: absolute;
@@ -509,5 +510,187 @@ body {
 	content: counter(rank);
 	margin-right: 10px;
 	font-weight: 500;
+}
 
+/* #### MyPage html #### */
+.mypage-content {
+	padding: 0;
+}
+
+.user-info {
+	padding: 20px;
+	display: flex;
+	gap: 10px;
+}
+
+.user-avatar {
+	flex: 1;
+}
+
+.user-avatar img {
+	width: 60px;
+	border-radius: 50%;
+}
+
+.user-summary {
+	flex: 4;
+}
+
+.rating b {
+	font-weight: 500;
+	text-transform: uppercase;
+	color: var(--limegreen);
+	font-size: 16px;
+}
+
+.rating span {
+	font-size: 16px;
+	font-weight: 400;
+	margin-left: 10px;
+	color: var(--dart-gray);
+}
+
+.btn-setting {
+	float: right;
+	border: none;
+	background-color: transparent;
+	font-size: 20px;
+	color: var(--light-gray);
+	transform: translate(8px, -7px);
+}
+
+.nickname {
+	font-size: 18px;
+	margin-top: 5px;
+	font-weight: 500;
+}
+
+.point-coupon {
+	display: flex;
+	gap: 7px;
+}
+
+.point-coupon div {
+	background-color: var(--gloudy);
+	border-radius: 18px;
+	padding: 4px 20px;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.point-coupon div span {
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.point-coupon div span:last-child {
+	color: var(--crimson);
+}
+
+.point-coupon .point {
+	flex: 3;
+}
+
+.point-coupon .coupon {
+	flex: 1
+}
+
+.delivering {
+	padding: 20px;
+}
+
+.delivering h2 {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.delivering-items {
+	border: 1px solid var(--gloudy);
+	padding: 15px;
+	border-radius: 10px;
+}
+
+.delivering-item {
+	display: flex;
+	gap: 10px;
+	padding: 10px 0;
+	border-bottom: 1px solid var(--gloudy);
+}
+
+.delivering-item:first-child {
+	padding-top: 0;
+}
+
+.delivering-item:last-child {
+	border: none;
+	padding-bottom: 0;
+}
+
+.delivering-item .thum {
+	width: 62px;
+	height: 62px;
+}
+
+.delivering-item .thum img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+}
+
+.delivering-item .desc span {
+	font-weight: 400;
+}
+
+.delivering-item .desc b {
+	display: block;
+	color: var(--limegreen);
+	font-weight: 500;
+	margin-top: 2px;
+}
+
+.mypage .banner a img {
+	width: 100%;
+}
+
+.user-shortcut {}
+
+.user-shortcut a {
+	display: block;
+	height: 50px;
+	border-bottom: 1px solid var(--gloudy);
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	padding: 0 15px;
+}
+
+.user-shortcut a:after {
+	transform: rotate(-90deg);
+	right: 15px;
+}
+
+.user-shortcut a .bi {
+	width: 25px;
+	text-align: center;
+}
+
+.user-shortcut a:last-child {
+	border: none;
+}
+
+.user-shortcut a:nth-child(5) .bi {
+	font-size: 19px;
+}
+
+.user-shortcut a span {
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+.btn-signout {
+	background-color: var(--gainsboro);
+	width: 90%;
+	margin: 15px auto;
+	display: block;
 }
