@@ -275,10 +275,6 @@ body {
 }
 
 /* #### Signup html #### */
-.signup {}
-
-.signup-inner {}
-
 .signup-field {
 	margin-bottom: 15px;
 }
@@ -356,4 +352,56 @@ body {
 .signup-field.birth div>*:focus::placeholder,
 .signup-field.phone div input:focus::placeholder {
 	opacity: 0;
+}
+
+/* #### Category html #### */
+.category-content {
+	padding: 0;
+}
+
+.category-accordion {
+	font-size: 16px;
+}
+
+.category-accordion .title {
+	border-bottom: 1px solid var(--gloudy);
+	height: 50px;
+	display: flex;
+	align-items: center;
+	color: var(--crimson);
+	font-weight: 400;
+	position: relative;
+	padding: 0 20px;
+}
+
+.category-accordion .title:after {
+	content: '\F282';
+	font-family: bootstrap-icons;
+	position: absolute;
+	right: 10px;
+	background-color: var(--fuschia);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 13px;
+	transition: 0.35s;
+}
+
+.category-accordion .title.active:after {
+	transform: rotate(180deg);
+	background-color: transparent;
+}
+
+.category-accordion .detail {
+	display: none;
+	line-height: 2em;
+	padding: 7px 0;
+	background-color: var(--snow);
+	padding: 0 20px;
+}
+
+.category-accordion .detail a {
+	display: block;
+	padding: 3px 0;
 }
