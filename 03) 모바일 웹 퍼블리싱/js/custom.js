@@ -20,4 +20,12 @@ $(function () {
 	$('.search-recent .btn-all-clear').click(function () {
 		$('.search-recent .item').hide()
 	})
+
+	// Cart Items
+	$('.cart-content .btn-all-clear').click(function () {
+		$('.cart-item').hide()
+	})
+	$('.cart-item-title .btn-clear').click(function () {
+		$(this).parent().parent().hide()
+	})
 })
