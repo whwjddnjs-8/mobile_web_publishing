@@ -23,7 +23,7 @@
 	/* Text Color */
 	--dark-black: #333333;
 	--light-black: #555555;
-	--dart-gray: #777777;
+	--dark-gray: #777777;
 	--light-gray: #999999;
 	--silver-gray : #C0C0C0;
 	--gloudy: #EEEEEE;
@@ -41,4 +41,5 @@
 	--gainsboro : #DCDCDC;
 	--royalblue : #5096FF;
 	--fuschia : #FCDDEC;
+	--light-beige : #F2E8D5;
 }
