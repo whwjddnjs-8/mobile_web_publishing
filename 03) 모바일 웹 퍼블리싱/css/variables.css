@@ -25,7 +25,7 @@
 	--light-black: #555555;
 	--dark-gray: #777777;
 	--light-gray: #999999;
-	--silver-gray : #C0C0C0;
+	--silver-gray: #C0C0C0;
 	--gloudy: #EEEEEE;
 
 	/* Object Color */
@@ -38,8 +38,11 @@
 	--limegreen: #2ECC71;
 	--turquoise: #72E7E1;
 	--snow: #F5F5F5;
-	--gainsboro : #DCDCDC;
-	--royalblue : #5096FF;
-	--fuschia : #FCDDEC;
-	--light-beige : #F2E8D5;
+	--gainsboro: #DCDCDC;
+	--royalblue: #5096FF;
+	--fuschia: #FCDDEC;
+	--light-beige: #F2E8D5;
+
+	/* For Big Size Mobile & Tablet Device */
+	--slide-basis: 375px;
 }

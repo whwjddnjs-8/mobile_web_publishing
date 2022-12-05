@@ -18,8 +18,14 @@ body {
 
 /* Layout CSS */
 .container {
-	width: 375px;
+	width: 100%;
 	position: relative;
+}
+
+.preloading,
+.signin,
+.signup {
+	height: 100vh;
 }
 
 /* Logo CSS */
@@ -72,17 +78,30 @@ body {
 	background-color: var(--crimson);
 }
 
+.info-badge {
+	font-size: 12px;
+	border: 1px solid #000;
+	border-radius: 15px;
+	padding: 1px 7px;
+}
+
+.info-badge.arrival {
+	border-color: var(--crimson);
+	color: var(--crimson)
+}
+
 /* GNB CSS */
 .gnb {
 	/* 작업완료후 100%로 수정 */
-	width: 375px;
+	width: 100%;
 	height: 65px;
 	display: flex;
 	justify-content: space-between;
 	/* 작업완료 후, fixed로 수정 */
-	/* position: absolute;
-	bottom: 0; */
+	position: fixed;
+	bottom: 0;
 	border-top: 1px solid var(--gloudy);
+	background-color: #fff;
 }
 
 .gnb a {
@@ -105,6 +124,15 @@ body {
 .gnb a span {
 	display: block;
 	font-size: 13px;
+}
+
+/* GNB Navigation Check */
+.category .gnb a:nth-child(1),
+.search .gnb a:nth-child(2),
+.front .gnb a:nth-child(3),
+.mypage .gnb a:nth-child(4),
+.cart .gnb a:nth-child(5) {
+	color: var(--crimson)
 }
 
 /* Main Header CSS */
@@ -141,6 +169,12 @@ body {
 .user-alarm span,
 .cart-alarm b {
 	position: relative;
+	width: 30px;
+	margin: auto;
+}
+
+.cart-alarm span {
+	transform: translateY(-8px);
 }
 
 .user-alarm span em,
@@ -156,7 +190,7 @@ body {
 
 .cart-alarm b em {
 	top: -2px;
-	right: 19px;
+	right: -4px;
 	color: #fff;
 }
 
@@ -172,39 +206,77 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+/* Goods Detail Header */
+.goods-detail-header {
+	height: 75px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.goods-detail-header .back-logo {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.goods-detail-header .back-logo .btn-back {
+	border: none;
+	background-color: transparent;
+	font-size: 20px;
+	color: var(--light-black)
+}
+
+.goods-detail-header .back-logo .logo {
+	margin: 0;
+	font-size: 24px;
+	margin-left: 7px;
+}
+
+.goods-detail-header .navigator {
+	margin-right: 10px;
+}
+
+.goods-detail-header .navigator button {
+	border: none;
+	background-color: transparent;
+	font-size: 20px;
+	color: var(--light-black)
+}
+
+.goods-detail-header .navigator b em {
+	top: 1px;
+	right: -6px;
+}
+
 /* Wish */
 .wish {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
 	text-align: center;
+	font-size: 16px;
 }
 
 .wish:before {
 	content: '\F417';
 	font-family: bootstrap-icons;
-	font-size: 16px;
 	color: var(--silver-gray);
 }
 
 .wish.active:before {
 	content: '\F415';
 	font-family: bootstrap-icons;
-	font-size: 16px;
 	color: var(--crimson);
 }
 
 /* Content Padding */
 [class*=content] {
 	padding: 20px;
+	margin-bottom: 70px;
 }
 
 /* #### Preloading html #### */
-.preloading {
-	/* 작업 완료후 height : 100vh */
-	height: 750px;
-}
-
 .preloading-inner {
 	width: inherit;
 	height: inherit;
@@ -451,7 +523,8 @@ body {
 
 /* Front Slider */
 .front-slider {
-	height: 275px;
+	/* height: 275px; */
+	height: auto;
 }
 
 .front-slider a img {
@@ -508,13 +581,13 @@ body {
 }
 
 .goods-suggestion-items {
-	width: 460px;
+	width: calc(var(--slide-basis) * 1.2);
 	margin-bottom: 10px;
 }
 
 .goods-suggestion-item .thum {
-	width: 145px;
-	height: 180px;
+	width: calc(var(--slide-basis) * 0.38);
+	height: calc(var(--slide-basis) * 0.48);
 }
 
 .goods-suggestion-item .thum img {
@@ -524,12 +597,34 @@ body {
 	border-radius: 5px;
 }
 
+.goods-suggestion-item .desc {
+	width: calc(var(--slide-basis) * 0.38);
+}
+
+/* Responsive Suggestion Item */
+/* @media (min-width : 400px) {
+	.goods-suggestion-items {
+		width: 500px;
+		margin-bottom: 10px;
+	}
+
+	.goods-suggestion-item .thum {
+		width: 158px;
+		height: 200px;
+	}
+
+	.goods-suggestion-item .desc,
+	.goods-suggestion-item .goods-title {
+		width: 158px;
+	}
+} */
+
 .goods-badge {
 	margin: 3px 0;
 }
 
 .goods-suggestion-item .goods-title {
-	width: 135px;
+	width: calc(var(--slide-basis) * 0.38);
 }
 
 .goods-title h3 {
@@ -741,6 +836,276 @@ input[id=food-type-tab6]:checked~.food-type-tab-btn label[for=food-type-tab6] {
 
 .company-info-more span {
 	display: block;
+}
+
+/* #### Goods Detail html #### */
+
+/* Goods Slider */
+.goods-detail-content {
+	padding: 0;
+}
+
+.goods-detail-slider-outer {
+	position: relative;
+}
+
+/* Button Share */
+.btn-share {
+	position: absolute;
+	right: 15px;
+	bottom: 20px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	border-radius: 50%;
+	padding: 2px;
+	font-size: 16px;
+	border: none;
+}
+
+.goods-detail-slider a {
+	width: 100%;
+	height: 350px;
+}
+
+.goods-detail-slider a img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+}
+
+/* Goods Slider Custom CSS*/
+.slick-dotted.slick-slider {
+	margin-bottom: 0;
+}
+
+.goods-detail-slider .slick-dots {
+	bottom: 15px
+}
+
+.goods-detail-slider .slick-dots li {
+	margin: 0;
+	width: 15px;
+	height: 15px;
+}
+
+.goods-detail-slider .slick-dots li.slick-active button:before {
+	color: var(--crimson)
+}
+
+.goods-detail-slider .slick-dots li button:before {
+	color: #fff;
+	opacity: 1;
+}
+
+/* Goods Info */
+.goods-info {
+	padding: 20px;
+}
+
+.goods-rating {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.stars .bi {
+	color: var(--gold);
+}
+
+.stars em {
+	font-style: normal;
+	font-size: 13px;
+	color: var(--royalblue);
+}
+
+.goods-info .goods-title h3 {
+	font-size: 16px;
+	margin: 5px 0;
+}
+
+.goods-info .goods-title div {
+	font-size: 19px;
+	margin: 10px 0;
+}
+
+.goods-info .goods-title span b {
+	color: var(--dark-black);
+}
+
+.goods-delivery-info {
+	display: flex;
+	justify-content: space-between;
+	margin: 25px 0;
+	border-top: 1px solid var(--gloudy);
+	border-bottom: 1px solid var(--gloudy);
+	padding: 15px 0;
+	font-size: 13px;
+}
+
+.goods-delivery-info b {
+	flex: 1;
+}
+
+.goods-delivery-info>div {
+	flex: 4;
+}
+
+.goods-delivery-info div span {
+	display: block;
+}
+
+.goods-delivery-info div span em {
+	font-style: normal;
+	color: var(--silver-gray);
+}
+
+/* Goods Detail */
+.goods-detail-info {
+	padding: 10px;
+	text-align: center;
+}
+
+.goods-detail-info p {
+	padding: 5px;
+}
+
+.goods-detail-info img {
+	width: 100%;
+}
+
+/* Goods Accordion */
+.goods-accordion .title {
+	border-bottom: 1px solid var(--gloudy);
+	height: 40px;
+	font-weight: normal;
+	padding-left: 20px;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.goods-accordion .title:after {
+	content: '\F64D';
+	font-family: bootstrap-icons;
+	position: absolute;
+	right: 15px;
+}
+
+.goods-accordion .title.active {
+	color: var(--crimson);
+}
+
+.goods-accordion .title.active:after {
+	content: '\F63B';
+}
+
+.goods-accordion .detail {
+	display: none;
+}
+
+.goods-accordion .detail img {
+	width: 100%;
+}
+
+/* Goods Order Info */
+.goods-order-info {
+	background-color: #fff;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.05);
+	padding: 15px;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
+.goods-order-choice {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.goods-order-choice .wish {
+	font-size: 25px;
+	flex: 1;
+}
+
+.btn-order-choice {
+	background-color: var(--royalblue);
+	flex: 6;
+}
+
+.goods-order-final {
+	position: relative;
+	display: none;
+	z-index: 1000;
+}
+
+.btn-fold {
+	position: absolute;
+	background-color: transparent;
+	border: none;
+	width: 100%;
+	top: -14px;
+	left: 0
+}
+
+.overlay-fold {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+
+.goods-order-final-info .goods-title {
+	margin: 10px 0;
+}
+
+.goods-order-final-info .goods-title h3 {
+	font-size: 16px;
+}
+
+.goods-order-final-info .goods-title>div {
+	font-size: 20px;
+	margin-top: 15px;
+}
+
+
+
+.payment-benefit {
+	font-size: 13px;
+	margin: 20px 0;
+}
+
+.payment-benefit b {
+	font-weight: 400;
+	font-size: 15px;
+}
+
+.payment-benefit p {
+	margin: 5px 0;
+	color: var(--light-gray);
+}
+
+.payment-benefit a {
+	text-decoration: underline;
+}
+
+.goods-order-btns {
+	display: flex;
+	gap: 10px;
+}
+
+.btn-cart {
+	background-color: #fff;
+	border: 1px solid var(--royalblue);
+	color: var(--royalblue);
+}
+
+.btn-now-order {
+	background-color: var(--royalblue);
 }
 
 /* #### Category html #### */
@@ -1257,4 +1622,17 @@ input[id=food-type-tab6]:checked~.food-type-tab-btn label[for=food-type-tab6] {
 .cart-notice li::before {
 	content: '-';
 	margin-right: 8px;
+}
+
+/* For Big Size Mobile & Tablet Device */
+@media (min-width : 400px) {
+	:root {
+		--slide-basis: 420px;
+	}
+}
+
+@media (min-width : 768px) and (max-width : 1024px) {
+	:root {
+		--slide-basis: 780px;
+	}
 }

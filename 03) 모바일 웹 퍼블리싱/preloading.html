@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome to Today's Meal Kit</title>
@@ -7,10 +8,13 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<!-- Custom CSS & JS -->
 	<link rel="stylesheet" href="/css/style.css">
+	<!-- Favicon -->
+	<link rel="icon" href="/images/favicon.png">
 </head>
+
 <body>
 	<div class="container preloading">
-		<div class="preloading-inner">
+		<div class="preloading-inner" onclick="location.href='/html/front.html'">
 			<div class="heading-preloading-inner">
 				<h2 class="logo">Today’s Meal Kit</h2>
 				<p class="slogan">
@@ -21,5 +25,10 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+		setTimeout("location.href = '/html/front.html'", 3000)
+	</script>
 </body>
+
 </html>

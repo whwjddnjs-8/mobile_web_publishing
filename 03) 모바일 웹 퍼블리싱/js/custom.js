@@ -2,6 +2,7 @@ $(function () {
 	/* Include html Files */
 	$('.gnb-include').load('/include/gnb.html')
 	$('.main-header-include').load('/include/main-header.html')
+	$('.goods-detail-header-include').load('/include/goods-detail-header.html')
 
 	/* Category Accordion */
 	$('.category-accordion .detail').eq(0).show()
@@ -55,4 +56,34 @@ $(function () {
 	$('.btn-view-more').click(function () {
 		$('.company-info-more').slideToggle()
 	})
+
+	/* Goods Detail Slider */
+		$('.goods-detail-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		arrows: false,
+		})
+	
+	/* Goods Accordion */
+	$('.goods-accordion .detail').eq(0).show()
+	$('.goods-accordion .title').click(function () {
+		$(this).addClass('active')
+		$(this).siblings('.goods-accordion .title').removeClass('active')
+		$(this).siblings('.goods-accordion .detail').slideUp()
+		$(this).next().slideDown()
+	})
+
+	/* Goods Order Info */
+	$('.btn-order-choice').click(function () {
+		$('.overlay-fold').show()
+		$('.goods-order-choice').hide()
+		$('.goods-order-final').slideDown()
+	}) 
+
+	$('.btn-fold, .overlay-fold').click(function () {
+		$('.overlay-fold').hide()
+		$('.goods-order-choice').show()
+		$('.goods-order-final').slideUp()
+	}) 
 })
